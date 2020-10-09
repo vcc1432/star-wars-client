@@ -20,7 +20,7 @@ const Search = (props) => {
 
   const callSearchFunction = (e) => {
     e.preventDefault();
-    console.log(searchValue);
+    props.search(searchValue);
     resetForm();
   }
 
