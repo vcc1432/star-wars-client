@@ -1,7 +1,43 @@
-import React from "react";
+import React , { useState } from "react";
 
-const Search = () => {
-  return (  );
+const Search = (props) => {
+  const [searchValue, setSearchValue] = useState({
+    query: '',
+    orderBy: 'asc',
+  });
+  
+  const handleSearchInputChanges = (e) => {
+    setSearchValue({...searchValue, query: e.target.value});
+  }
+
+  const handleSelectChanges = (e) => {
+    setSearchValue({...searchValue, orderBy: e.target.value});
+  }
+
+  const resetForm = () => {
+    setSearchValue({ query: "", orderBy: 'asc' });
+  }
+
+  const callSearchFunction = (e) => {
+    e.preventDefault();
+    console.log(searchValue);
+    resetForm();
+  }
+
+  return ( 
+    <form className="search">
+      <input
+        value={searchValue.query}
+        onChange={handleSearchInputChanges}
+        type="text"
+      />
+      <select value={searchValue.orderBy} onChange={ handleSelectChanges }>
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
+      </select>
+      <input onClick={callSearchFunction} type="submit" value="SEARCH" />
+    </form>
+   );
 }
  
 export default Search;
