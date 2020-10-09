@@ -1,14 +1,14 @@
-import React, { useReducer, useEffect } from "react";
+import React, { useReducer } from "react";
 import './App.css';
 import Header from "./Header";
 import Search from './Search';
+import Movie from './Movie';
 
 const initialState = {
-  loading: true,
+  loading: false,
   movies: [],
   errorMessage: null
 };
-
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -35,8 +35,6 @@ const reducer = (state, action) => {
   }
 };
 
-
-
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -57,7 +55,7 @@ function App() {
         } else {
           dispatch({
               type: "SEARCH_MOVIES_FAILURE",
-              error: jsonResponse.Error
+              error: "No movies found for this search term. Maybe try again?"
           });
         }
       });
@@ -74,11 +72,13 @@ function App() {
        <div className="movies">
         {loading && !errorMessage ? (
           <span>loading... </span>
+        ) : !loading && movies.length < 1 && !errorMessage ? (
+          <span> Please enter a search term to find a movie's characters </span>
         ) : errorMessage ? (
           <div className="errorMessage">{errorMessage}</div>
         ) : (
           movies.map((movie, index) => (
-            <div>{ movie.title }</div>
+            <Movie key={movie.episode_id} movie={movie}/>
           ))
         )}
       </div>
