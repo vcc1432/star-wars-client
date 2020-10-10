@@ -1,88 +1,99 @@
 .App {
-  text-align: center;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/images/baby-yoda.jpg");
-  height: 100vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+  background-color: #101010;
+  min-height: 100vh;
+  color: whitesmoke;
 }
 
 .App-header {
-  height: 150px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../assets/images/baby-yoda.jpg");
+  background-position: revert;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+  color: whitesmoke;
   padding: 20px;
   cursor: pointer;
 }
 
-.App-header h1 {
+.App-header-text {
   font-family: StarJedi;
-  font-size: 9em;
 }
 
-.search {
-  display: flex;
+.App-header-text h1 {
+  font-size: 20em;
+  margin: 0;
+  top: 0;
+  left: 100px;
+  position: relative;
+  max-width: 50vw;
+}
+
+.flex-form {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 50px;
+  display: -webkit-box;
+  display: flex;
+  z-index: 10;
+  position: relative;
 }
 
-input[type="submit"] {
-  padding: 5px;
-  background-color: transparent;
-  color: black;
-  border: 1px solid black;
-  width: 80px;
-  margin-left: 5px;
-  cursor: pointer;
+.flex-form * {
+  font-size: 1rem;
+  color: whitesmoke;
+  background: #101010;
+  padding: 0 0 0 10px;
+  -webkit-appearance: none;
+  outline: 0;
+  line-height: 50px;
 }
 
-input[type="submit"]:hover {
-  background-color: #282c34;
-  color: antiquewhite;
+.flex-form > * {
+  border-radius: 3px;
+  border: 1px solid #fd9a75;
+  margin-right: 5px;
 }
 
-.search > input[type="text"]{
+.select select {
+  border: 0;
+}
+
+.select i {
+  padding-right: 15px;
+  padding-left: 0;
+}
+
+.flex-form > input[type="text"]{
   width: 40%;
   min-width: 170px;
 }
 
-.character-list {
+.flex-form input[type="submit"] {
+  background: #fd9a75;
+  border: 1px solid #fd9a75;
+  color: whitesmoke;
+  padding: 0 30px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.flex-form input[type="submit"]:hover {
+  background: #fec7c0;
+  border: 1px solid #fec7c0;
+}
+
+.movies {
   list-style: none;
   margin: 0 auto;
   padding: 0;
   width: 90%;
+  max-width: 50rem;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-}
-
-.character {
-  position: relative;
-  margin: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-  border-radius: 6px;
-  padding: 1rem;
-  overflow: hidden;
-  margin: 1rem;
-  min-width: 17.5rem;
-  color: white;
-}
-
-.overlay {
-  background-color: white;
-  opacity: .1;
-  position: absolute;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  right: 0;
 }
 
 @media screen and (min-width: 694px) and (max-width: 915px) {
@@ -98,6 +109,17 @@ input[type="submit"]:hover {
 }
 
 @media screen and (max-width: 651px) {
+  .App-header-text h1 {
+    font-size: 10em;
+    left: 0;
+  }
+
+  .App-header {
+    background-position: center;
+    height: 300px;
+    text-align: center;
+  }
+
   .character {
     max-width: 100%;
     margin: auto;
