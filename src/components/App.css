@@ -2,30 +2,43 @@
   background-color: #101010;
   min-height: 100vh;
   color: whitesmoke;
+  min-height: 100vh;
 }
 
 .App-header {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../assets/images/baby-yoda.jpg");
-  background-position: revert;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("https://upload.wikimedia.org/wikipedia/commons/9/98/Andromeda_Galaxy_%28with_h-alpha%29.jpg");
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 500px;
   color: whitesmoke;
-  padding: 20px;
+  padding: 20px 40px;
   cursor: pointer;
 }
 
 .App-header-text {
-  font-family: StarJedi;
+  display: flex;
+  height: 400px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end ;
+  color:yellow;
 }
 
 .App-header-text h1 {
-  font-size: 20em;
+  font-size: 10em;
+}
+
+.App-header-text > * {
   margin: 0;
-  top: 0;
-  left: 100px;
-  position: relative;
-  max-width: 50vw;
+}
+
+.App-header-text h2 {
+  font-size: 3em;
+  letter-spacing: .45rem;
+}
+
+.App-header-text h3 {
+  color: white;
 }
 
 .flex-form {
@@ -51,7 +64,7 @@
 
 .flex-form > * {
   border-radius: 3px;
-  border: 1px solid #fd9a75;
+  border: 1px solid #de3163;
   margin-right: 5px;
 }
 
@@ -70,8 +83,8 @@
 }
 
 .flex-form input[type="submit"] {
-  background: #fd9a75;
-  border: 1px solid #fd9a75;
+  background: #de3163;
+  border: 1px solid #de3163;
   color: whitesmoke;
   padding: 0 30px;
   cursor: pointer;
@@ -87,13 +100,32 @@
 
 .movies {
   list-style: none;
-  margin: 0 auto;
+  margin: 20px auto;
   padding: 0;
   width: 90%;
-  max-width: 50rem;
+  max-width: 75vw;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-wrap: wrap;
+}
+
+.movie-card {
+  max-width: 35%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,1);
+  transition: 0.3s;
+  margin-bottom: 20px;
+}
+
+.movie-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,1);
+}
+
+.movie-card-info {
+  padding: 20px;
+}
+
+.movie-poster { 
+  width: 100%;
 }
 
 @media screen and (min-width: 694px) and (max-width: 915px) {
