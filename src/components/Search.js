@@ -30,15 +30,15 @@ const Search = (props) => {
         value={searchValue.query}
         onChange={handleSearchInputChanges}
         type="text"
-        placeholder="Search movies..."
+        placeholder="Search movies by title..."
       />
-      <div className="select">
+      {/* <div className="select">
         <select value={searchValue.orderBy} onChange={ handleSelectChanges }>
           <option value="asc">Ascending</option>
           <option value="desc">Descending</option>
         </select>
         <i className="fa fa-caret-down" aria-hidden="true"></i>
-      </div>
+      </div> */}
       <input onClick={callSearchFunction} type="submit" value="SEARCH" />
     </form>
    );
