@@ -35,7 +35,7 @@ const reducer = (state, action) => {
   }
 };
 
-const Movies = () => {
+const MoviesPage = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const search = searchValue => {
@@ -64,7 +64,7 @@ const Movies = () => {
   const { movies, errorMessage, loading } = state;
 
   return (
-    <div className="App">
+    <div>
        <Search search={search} />
         {loading && !errorMessage && (
           <div className="center">
@@ -80,4 +80,4 @@ const Movies = () => {
   );
 }
  
-export default Movies;
+export default MoviesPage;

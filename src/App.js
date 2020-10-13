@@ -7,7 +7,8 @@ import {
   Switch
 } from 'react-router-dom';
 import Header from "./shared/Header";
-import Movies from './pages/Movies';
+import MoviesPage from './pages/MoviesPage';
+import MovieDetailsPage from './pages/MovieDetailsPage';
 
 
 const App = () => {
@@ -16,9 +17,15 @@ const App = () => {
      <Router>
        <Header />
        <main>
+        <Switch>
         <Route path="/" exact>
-          <Movies />
+          <MoviesPage />
         </Route>
+        <Route path="/movies/:movieId" exact>
+          <MovieDetailsPage />
+        </Route>
+        <Redirect to="/" />
+        </Switch>
        </main>
       </Router>
     </div>
