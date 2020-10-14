@@ -9,6 +9,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Technical Decisions
 
+At first, one endpoint was created, /search. This fetched all movies, and subsequently fetched all the characters of every movie. This made the app really slow, so it was decided to create two endpoints, one for the list view, and one for the detail page. This significantly improved the speed of the app. 
+
 ## Available Scripts
 
 In the project directory, you can run:
