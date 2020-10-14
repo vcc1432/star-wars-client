@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import MovieDetails from '../components/MovieDetails';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const MovieDetailsPage = () => {
   const movieId = useParams().movieId;
@@ -27,7 +29,8 @@ const MovieDetailsPage = () => {
 
   return ( 
     <div>
-     { movie && (<div>Movie details page: <strong>{movie.title}</strong></div>)}
+      { loading &&  <LoadingSpinner /> }
+      { movie && <MovieDetails movie={movie} />}
     </div>
   );
 }

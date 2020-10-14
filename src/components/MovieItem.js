@@ -7,7 +7,7 @@ const MovieItem = ({ movie }) => {
   const movieId = movie.url.match(/\d+/g)[0];
 
   return ( 
-    <div className="movie-card">
+    <div className="movie-card list">
       <Link to={`/movies/${movieId}`}>
         <div className="movie-poster">
           <img

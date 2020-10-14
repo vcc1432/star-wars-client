@@ -25,6 +25,10 @@ h3, p {
   font-family: 'Montserrat', sans-serif;
 }
 
+a {
+  color: inherit;
+}
+
 .center {
   margin-top: 20px;
   text-align: center;

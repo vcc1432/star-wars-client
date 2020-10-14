@@ -2,6 +2,7 @@ import React, { useReducer } from "react";
 import Search from '../components/Search';
 import Start from '../components/Start';
 import MovieList from "../components/MovieList";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 const initialState = {
   loading: false,
@@ -66,11 +67,7 @@ const MoviesPage = () => {
   return (
     <div>
        <Search search={search} />
-        {loading && !errorMessage && (
-          <div className="center">
-            <span>loading... </span>
-          </div>
-        )}
+        {loading && !errorMessage &&  <LoadingSpinner />}
         { !loading && movies.length < 1 && !errorMessage && <Start />}
         { errorMessage && (
           <div className="errorMessage center">{errorMessage}</div>
