@@ -25,8 +25,6 @@ const MovieDetailsPage = () => {
     fetchMovie();
   }, [movieId]);
 
-  console.log(movie)
-
   return ( 
     <div>
       { loading &&  <LoadingSpinner /> }

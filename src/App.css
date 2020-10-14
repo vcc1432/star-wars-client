@@ -51,7 +51,8 @@
   position: relative;
 }
 
-.flex-form * {
+.flex-form *,
+select {
   font-size: 1rem;
   color: whitesmoke;
   background: #101010;
@@ -61,10 +62,15 @@
   line-height: 50px;
 }
 
-.flex-form > * {
+.flex-form > *,
+.select {
   border-radius: 3px;
   border: 1px solid #de3163;
   margin-right: 5px;
+}
+
+.select {
+  width: 125px;
 }
 
 .select select {
