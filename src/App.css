@@ -27,7 +27,7 @@
   font-size: 10em;
 }
 
-.App-header-text > * {
+.App-header-text * {
   margin: 0;
 }
 
@@ -132,14 +132,14 @@ select {
 .detail {
   margin: 20px;
   height: 60vh;
+  display: flex;
+  justify-content: center;
+  width: 50vw;
+  margin: 20px auto;
 }
 
 .movie-card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,1);
-}
-
-.movie-card a {
-  text-decoration: none;
 }
 
 .movie-card-info {
@@ -150,7 +150,45 @@ select {
   width: 100%;
 }
 
+.character-list {
+  overflow-y: scroll;
+  height: 40vh;
+}
 
+
+.character-list ul {
+  counter-reset: index;  
+  padding: 0;
+  max-width: 400px;
+}
+
+.character-list li {
+  counter-increment: index; 
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  box-sizing: border-box;
+}
+
+.character-list li::before {
+  content: counters(index, ".", decimal-leading-zero);
+  font-size: 1.5rem;
+  text-align: right;
+  font-weight: bold;
+  min-width: 50px;
+  padding-right: 12px;
+  font-variant-numeric: tabular-nums;
+  align-self: flex-start;
+  background-image: linear-gradient(to bottom, aquamarine, orangered);
+  background-attachment: fixed;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.detail li + li {
+  border-top: 1px solid rgba(255,255,255,0.2);
+}
 
 @media screen and (min-width: 694px) and (max-width: 915px) {
   .character {

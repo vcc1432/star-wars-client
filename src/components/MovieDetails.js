@@ -18,13 +18,12 @@ const MovieDetails = ({ movie }) => {
 
   return ( 
   <div className="movie-card detail">
-    <div className="movie-poster">
       <img
+        height="100%"
         alt={`The movie titled: ${movie.title}`}
         src={`/images/${movie.episode_id}.jpg`}
       />
-    </div>
-    <div className="movie-info">
+    <div className="movie-card-info">
       <h1>{movie.title}</h1>
       <h3>Characters: </h3>
       <div className="select">
@@ -34,11 +33,13 @@ const MovieDetails = ({ movie }) => {
         </select>
         <i className="fa fa-caret-down" aria-hidden="true"></i>
       </div>
-      <ul>
-      { sortedCharacters.map(character => (
-        <li key={character.url}>{character.name} ({ character.height} cm) </li>
-      ))}
-      </ul>
+      <div className="character-list">
+        <ul>
+        { sortedCharacters.map(character => (
+          <li key={character.url}>{character.name} ({ character.height} cm) </li>
+        ))}
+        </ul>
+      </div>
     </div>
   </div> 
     );
