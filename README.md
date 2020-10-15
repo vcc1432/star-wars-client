@@ -16,7 +16,11 @@ This change also meant moving the ordering logic to the frontend, to prevent une
 
 In the project directory, you can run:
 
-### `yarn start or npm start`
+### `yarn install` or `npm install` 
+
+Installs the dependencies in the local node_modules folder.
+
+### `yarn start` or `npm start`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
