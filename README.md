@@ -30,7 +30,7 @@ You will also see any lint errors in the console.
 
 ## Future improvements, features and fixes
 
-Since there was limited time to set up this application, I have a few ideas for future improvements:
+I have a few ideas for future improvements:
 
 - Building an error modal, which will appear when a call to the server failed;
 - Building a 404 page with a disappointed baby Yoda;
